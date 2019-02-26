@@ -18,7 +18,6 @@
   (require 'use-package))
 
 (add-to-list 'load-path "~/.emacs.d/custom")
-(add-to-list 'load-path "~/.emacs.d/")
 (require 'setup-key)
 (require 'setup-utf8)
 ;;;; End Initialize ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
