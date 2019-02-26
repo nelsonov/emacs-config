@@ -1,0 +1,10 @@
+# emacs           #
+###################
+*
+!.gitignore
+!*.org
+!init.el
+!themes
+!custom
+!themes/*.el
+!custom/*.el

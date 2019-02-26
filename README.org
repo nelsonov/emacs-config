@@ -1,0 +1,40 @@
+* Lee's Emacs Configuration
+
+In *~/.emacs.d*
+
+#+BEGIN_SRC sh
+git clone git@github.com:nelsonov/emacs-config.git
+#+END_SRC
+
+** Included/Ignored
+
+*.gitignore* is setup so that only certain files are included.  All other files
+will be ignored by git.
+
+***Included
+
+ + ~.gitignore~
+ + ~init.el~
+ + ~*.org~ Any file ending in .org (Like this current file)
+ + ~themes/*.el~ Only files ending in ~.el~ in the themes subdirectory
+ + ~custom/*.el~ Only files ending in ~.el~ in the custom subdirectory 
+
+** custom subdirectory
+Rather than having a single, huge, monolithic ~init.el~, much of the
+configuration has been broken out into individule files.  They are called
+from ~init.el~ with a ~require~ statement:
+
+#+BEGIN_SRC emacs-lisp
+(require 'setup-something)
+#+END_SRC
+
+This tells emacs to look for a file called ~setup-something.el~ in the *load path*
+
+The ~setup-something.el~ file must end with a ~provide~ statement:
+
+The ~custom~ subidrectory must be added the *load path* in ~init.el~:
+
+#+BEGIN_SRC emacs-lisp
+(add-to-list 'load-path "~/.emacs.d/custom")
+#+END_SRC
+
