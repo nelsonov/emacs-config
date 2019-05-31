@@ -1,7 +1,10 @@
+;;;;;;;;;; Initialze ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; use emacsclient -n to send file to server
 (server-start)
 
-;;;;;;;;;; Initialze ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;Tramp
+(require 'tramp)
+
 ;Add melpa to known package repositories
 (require 'package)
 (package-initialize)
@@ -39,6 +42,13 @@
 (setq next-line-add-newlines nil) ;Stop at the end of file, not add lines
 ;;(setq make-backup-files nil) ;don't make backup files, please
 (setq inhibit-startup-message t) ;don't display splash screen
+
+;; disable mouse
+(use-package disable-mouse
+  :ensure t
+  :config (global-disable-mouse-mode))
+
+
 
 ;; show unncessary whitespace that can mess up diff
 (add-hook 'prog-mode-hook
@@ -90,6 +100,7 @@ asterix (lists) intact."
 
 (use-package iedit
   :ensure t)
+(require 'setup-easyhugo)
 ;;;; End Editing ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;;;; Development;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -125,7 +136,7 @@ asterix (lists) intact."
  '(org-agenda-files (quote ("~/org/notes.org")))
  '(package-selected-packages
    (quote
-    (company-go go-eldoc company ace-window helm projectile pandoc-mode org-protocol-capture-html org-protocol highlight-symbol ggtags dockerfile-mode yaml-mode use-package))))
+    (easy-hugo company-go go-eldoc company ace-window helm projectile pandoc-mode org-protocol-capture-html org-protocol highlight-symbol ggtags dockerfile-mode yaml-mode use-package))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
