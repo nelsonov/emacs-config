@@ -100,7 +100,7 @@ asterix (lists) intact."
 
 (use-package iedit
   :ensure t)
-(require 'setup-easyhugo)
+;(require 'setup-easyhugo)
 ;;;; End Editing ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;;;; Development;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
