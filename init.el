@@ -9,7 +9,7 @@
 (require 'package)
 (package-initialize)
 (add-to-list 'package-archives
-  '("melpa" . "http://melpa.milkbox.net/packages/") t)
+  '("melpa" . "https://melpa.org/packages/") t)
 
 ; Install use-package if not already installed
 (if (not (package-installed-p 'use-package))
