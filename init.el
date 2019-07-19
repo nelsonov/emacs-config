@@ -101,6 +101,9 @@ asterix (lists) intact."
 (use-package iedit
   :ensure t)
 ;(require 'setup-easyhugo)
+
+;Enable auto-fill-mode on all text modes
+(add-hook 'text-mode-hook 'auto-fill-mode)
 ;;;; End Editing ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;;;; Development;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
