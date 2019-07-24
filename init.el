@@ -48,8 +48,6 @@
   :ensure t
   :config (global-disable-mouse-mode))
 
-
-
 ;; show unncessary whitespace that can mess up diff
 (add-hook 'prog-mode-hook
           (lambda () (interactive)
@@ -79,6 +77,9 @@
 ;;;; End Appearence ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;;;; Editing ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;Spelling setup
+(require 'setup-spelling)
+
 (defun undo-all ()
   "Undo all changes.
 This is equivalent to revert-buffer, except that it doesn't
