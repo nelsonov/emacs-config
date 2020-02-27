@@ -111,6 +111,7 @@ asterix (lists) intact."
 (require 'setup-git)
 (require 'setup-ggtags)
 (require 'setup-golang)
+(require 'setup-python)
 (require 'setup-projectile)
 
 (use-package yaml-mode
