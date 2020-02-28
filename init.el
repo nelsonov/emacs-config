@@ -76,6 +76,15 @@
 (require 'setup-dired-sidebar)
 ;;;; End Appearence ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+;;;; Utility Functions;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(defun process-exit-code-and-output (program &rest args)
+  "Run PROGRAM with ARGS and return the exit code and output in a list."
+  (with-temp-buffer
+    (list (apply 'call-process program nil (current-buffer) nil args)
+          (buffer-string))))
+
+;;;; End Utility Functions;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 ;;;; Editing ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;Spelling setup
 (require 'setup-spelling)
@@ -111,7 +120,7 @@ asterix (lists) intact."
 (require 'setup-git)
 (require 'setup-ggtags)
 (require 'setup-golang)
-(require 'setup-python)
+;(require 'setup-python)
 (require 'setup-projectile)
 
 (use-package yaml-mode
@@ -141,7 +150,7 @@ asterix (lists) intact."
  '(org-agenda-files (quote ("~/org/notes.org")))
  '(package-selected-packages
    (quote
-    (easy-hugo company-go go-eldoc company ace-window helm projectile pandoc-mode org-protocol-capture-html org-protocol highlight-symbol ggtags dockerfile-mode yaml-mode use-package))))
+    (blacken black isort easy-hugo company-go go-eldoc company ace-window helm projectile pandoc-mode org-protocol-capture-html org-protocol highlight-symbol ggtags dockerfile-mode yaml-mode use-package))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
