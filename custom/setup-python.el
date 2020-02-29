@@ -2,8 +2,7 @@
   :ensure t
   :defer t
   :init
-  (elpy-enable)
-  (advice-add 'python-mode :before ''elpy-enable))
+  (advice-add 'python-mode :before 'elpy-enable))
 
 (when (load "flycheck" t t)
   (setq elpy-modules (delq 'elpy-module-flymake elpy-modules))
