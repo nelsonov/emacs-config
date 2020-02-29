@@ -32,8 +32,8 @@
 
 ;; sudo pip3 install isort
 ;; => (0 "-r-w-r-- 1 ...")
-(if (equal (test-python "py-isort") t)
-    (use-package isort
+(if (equal (test-python "isort") t)
+    (use-package py-isort
       :ensure t))
 
 
