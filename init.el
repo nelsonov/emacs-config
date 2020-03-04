@@ -109,9 +109,7 @@ asterix (lists) intact."
 
 ;;;; Completion ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (require 'setup-company)
-
-(use-package helm
-  :ensure t)
+(require 'setup-helm)
 ;;;; End Completion ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;;;; Custom ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
