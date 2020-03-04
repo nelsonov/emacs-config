@@ -3,8 +3,9 @@
 In *~/.emacs.d*
 
 #+BEGIN_SRC sh
-git clone git@github.com:nelsonov/emacs-config.git
+git clone git@github.com:nelsonov/emacs-config.git .
 #+END_SRC
+*Don't forget the "." (dot) at the end of the above command*
 
 ** Included/Ignored
 

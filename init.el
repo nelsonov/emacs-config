@@ -1,12 +1,15 @@
+;;;;;;;;;; Initialze ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; use emacsclient -n to send file to server
 (server-start)
 
-;;;;;;;;;; Initialze ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;Tramp
+(require 'tramp)
+
 ;Add melpa to known package repositories
 (require 'package)
 (package-initialize)
 (add-to-list 'package-archives
-  '("melpa" . "http://melpa.milkbox.net/packages/") t)
+  '("melpa" . "https://melpa.org/packages/") t)
 
 ; Install use-package if not already installed
 (if (not (package-installed-p 'use-package))
@@ -40,6 +43,11 @@
 ;;(setq make-backup-files nil) ;don't make backup files, please
 (setq inhibit-startup-message t) ;don't display splash screen
 
+;; disable mouse
+(use-package disable-mouse
+  :ensure t
+  :config (global-disable-mouse-mode))
+
 ;; show unncessary whitespace that can mess up diff
 (add-hook 'prog-mode-hook
           (lambda () (interactive)
@@ -68,7 +76,19 @@
 (require 'setup-dired-sidebar)
 ;;;; End Appearence ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+;;;; Utility Functions;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(defun process-exit-code-and-output (program &rest args)
+  "Run PROGRAM with ARGS and return the exit code and output in a list."
+  (with-temp-buffer
+    (list (apply 'call-process program nil (current-buffer) nil args)
+          (buffer-string))))
+
+;;;; End Utility Functions;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 ;;;; Editing ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;Spelling setup
+(require 'setup-spelling)
+
 (defun undo-all ()
   "Undo all changes.
 This is equivalent to revert-buffer, except that it doesn't
@@ -90,12 +110,17 @@ asterix (lists) intact."
 
 (use-package iedit
   :ensure t)
+;(require 'setup-easyhugo)
+
+;Enable auto-fill-mode on all text modes
+(add-hook 'text-mode-hook 'auto-fill-mode)
 ;;;; End Editing ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;;;; Development;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (require 'setup-git)
 (require 'setup-ggtags)
 (require 'setup-golang)
+(require 'setup-python)
 (require 'setup-projectile)
 
 (use-package yaml-mode
@@ -123,7 +148,7 @@ asterix (lists) intact."
  '(org-agenda-files (quote ("~/org/notes.org")))
  '(package-selected-packages
    (quote
-    (company-go go-eldoc company ace-window helm projectile pandoc-mode org-protocol-capture-html org-protocol highlight-symbol ggtags dockerfile-mode yaml-mode use-package))))
+    (blacken black isort easy-hugo company-go go-eldoc company ace-window helm projectile pandoc-mode org-protocol-capture-html org-protocol highlight-symbol ggtags dockerfile-mode yaml-mode use-package))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
