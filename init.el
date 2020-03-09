@@ -53,11 +53,30 @@
           (lambda () (interactive)
             (setq show-trailing-whitespace 1)))
 
-(use-package dtrt-indent
-  :ensure t)
+;(use-package dtrt-indent
+;  :ensure t)
 
-(use-package indent-guide
-  :ensure t)
+(use-package highlight-indent-guides
+  :ensure t
+  :init
+  (add-hook 'prog-mode-hook 'highlight-indent-guides-mode)
+  :config
+  (setq highlight-indent-guides-method 'column)
+  (setq highlight-indent-guides-auto-odd-face-perc 25)
+  (setq highlight-indent-guides-auto-even-face-perc 15)
+  (setq highlight-indent-guides-auto-character-face-perc 20)
+  )
+
+
+;(use-package indent-guide
+;  :ensure t
+;  :init (add-hook 'prog-mode-hook 'indent-guide-mode)
+;  :config
+;  (set-face-background 'indent-guide-face "dimgray")
+;  (setq indent-guide-recursive t)
+;  ;(setq indent-guide-delay 0.1)
+;  ;(setq indent-guide-char ":")
+;  )
 
 (use-package highlight-symbol
   :ensure t
