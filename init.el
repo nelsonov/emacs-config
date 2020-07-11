@@ -43,6 +43,11 @@
 ;;(setq make-backup-files nil) ;don't make backup files, please
 (setq inhibit-startup-message t) ;don't display splash screen
 
+
+;; set browser for opening URL's
+(setq browse-url-browser-function 'browse-url-generic
+      browse-url-generic-program "chromium")
+
 ;; disable mouse
 (use-package disable-mouse
   :ensure t
@@ -105,6 +110,9 @@
 ;;;; End Utility Functions;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;;;; Editing ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;Markdown mode setup
+(require 'setup-markdown)
+
 ;;Spelling setup
 (require 'setup-spelling)
 
@@ -167,7 +175,7 @@ asterix (lists) intact."
  '(org-agenda-files (quote ("~/org/notes.org")))
  '(package-selected-packages
    (quote
-    (markdown-mode blacken black isort easy-hugo company-go go-eldoc company ace-window helm projectile pandoc-mode org-protocol-capture-html org-protocol highlight-symbol ggtags dockerfile-mode yaml-mode use-package)))
+    (markdown-preview-mode markdown-mode blacken black isort easy-hugo company-go go-eldoc company ace-window helm projectile pandoc-mode org-protocol-capture-html org-protocol highlight-symbol ggtags dockerfile-mode yaml-mode use-package)))
  '(safe-local-variable-values
    (quote
     ((circuitpython-copy-path . "/mnt/chromeos/removable/CIRCPY/")))))
