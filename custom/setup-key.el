@@ -5,5 +5,5 @@
 (global-set-key (kbd "C-c g") 'goto-line)
 (global-set-key [f9]    'goto-line); F9
 (global-set-key (kbd "RET") 'newline-and-indent)
-
+(global-set-key (kbd "C-c c") 'compile)
 (provide 'setup-key)
