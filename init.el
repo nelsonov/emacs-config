@@ -161,7 +161,7 @@ asterix (lists) intact."
 
 ;;;; Completion ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (require 'setup-company)
-(require 'setup-helm)
+;;(require 'setup-helm)
 ;;;; End Completion ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;;;; Custom ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
