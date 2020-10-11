@@ -23,6 +23,10 @@
 (add-to-list 'load-path "~/.emacs.d/custom")
 (require 'setup-key)
 (require 'setup-utf8)
+
+;;Put emacs-generated customizations elsewhere
+;;Keeping this file clean for git.
+(setq custom-file (concat user-emacs-directory "/custom.el"))
 ;;;; End Initialize ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;;;;;;;;;; Appearence ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -139,6 +143,9 @@ asterix (lists) intact."
   :ensure t)
 ;(require 'setup-easyhugo)
 
+(use-package yasnippet
+  :ensure t)
+
 ;Enable auto-fill-mode on all text modes
 (add-hook 'text-mode-hook 'auto-fill-mode)
 ;;;; End Editing ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -148,11 +155,10 @@ asterix (lists) intact."
 (require 'setup-ggtags)
 (require 'setup-golang)
 (require 'setup-python)
+(require 'setup-jinja2)
 (require 'setup-projectile)
-
-(use-package yaml-mode
-  :ensure t
-  :mode ("\\.yaml\\'" . yaml-mode))
+(require 'setup-ansible)
+(require 'setup-yaml)
 
 (use-package dockerfile-mode
   :ensure t
