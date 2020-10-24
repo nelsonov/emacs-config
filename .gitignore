@@ -8,3 +8,4 @@
 !custom
 !themes/*.el
 !custom/*.el
+!authinfo.txt
