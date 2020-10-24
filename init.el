@@ -29,6 +29,11 @@
 (setq custom-file (concat user-emacs-directory "/custom.el"))
 ;;;; End Initialize ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+;;;;;;;;;; authinfo ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(setq auth-sources
+    '((:source "~/.emacs.d/.authinfo.gpg")))
+;;;; End authinfo ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 ;;;;;;;;;; Appearence ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Themes ;;;
 (setq custom-safe-themes t)
