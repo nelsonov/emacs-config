@@ -164,6 +164,7 @@ asterix (lists) intact."
 (require 'setup-projectile)
 (require 'setup-ansible)
 (require 'setup-yaml)
+(require 'setup-openscad)
 
 (use-package dockerfile-mode
   :ensure t
