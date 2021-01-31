@@ -2,6 +2,11 @@
 ;; use emacsclient -n to send file to server
 (server-start)
 
+;; TLS workaround for old emacs versions
+(if (version< emacs-version "26.3")
+    (setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3"))
+
+
 ;Tramp
 (require 'tramp)
 
