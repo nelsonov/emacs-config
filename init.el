@@ -36,6 +36,7 @@
 (require 'setup-key)
 (require 'setup-utf8)
 (require 'setup-server)
+(require 'setup-tramp)
 ;;;;;;;end emacs ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;;;;;;;;;; authinfo ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
