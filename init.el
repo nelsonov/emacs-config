@@ -26,13 +26,17 @@
   (require 'use-package))
 
 (add-to-list 'load-path "~/.emacs.d/custom")
-(require 'setup-key)
-(require 'setup-utf8)
 
 ;;Put emacs-generated customizations elsewhere
 ;;Keeping this file clean for git.
 (setq custom-file (concat user-emacs-directory "/custom.el"))
 ;;;; End Initialize ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;;;;;;;;; emacs ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(require 'setup-key)
+(require 'setup-utf8)
+(require 'setup-server)
+;;;;;;;end emacs ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;;;;;;;;;; authinfo ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (setq auth-sources
