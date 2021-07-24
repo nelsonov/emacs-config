@@ -1,3 +1,4 @@
+;;
 (defun signal-restart-server ()
     "Handler for SIGUSR1 signal, to (re)start an emacs server.
 
@@ -13,6 +14,13 @@ $ emacsclient -c
     (server-start)
     )
 (define-key special-event-map [sigusr1] 'signal-restart-server)
+;; define function to shutdown emacs server instance
+(defun server-shutdown ()
+  "Save buffers, Quit, and Shutdown (kill) server"
+  (interactive)
+  (save-some-buffers)
+  (kill-emacs)
+  )
 
 (provide 'setup-server)
 
