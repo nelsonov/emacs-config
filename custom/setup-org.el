@@ -20,10 +20,10 @@
 ;;On LXDE (as root): update-desktop-database
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(global-set-key "\C-cl" 'org-store-link)
-(global-set-key "\C-ca" 'org-agenda)
-(global-set-key "\C-cc" 'org-capture)
-(global-set-key "\C-cb" 'org-switchb)
+(global-set-key (kbd "C-c l") 'org-store-link)
+(global-set-key (kbd "C-c a") 'org-agenda)
+(global-set-key (kbd "C-c c") 'org-capture)
+(global-set-key (kbd "C-c b") 'org-switchb)
 
 ;(setq org-archive-location
 ;      '("~/org/archive.org"))
@@ -46,9 +46,11 @@
        (file "")
        "* %a :website:\n\n%U %?\n\n%:initial")))
 
-(require 'org-protocol-capture-html)
+;(require 'org-protocol-capture-html)
 
 ;(require 'org-eww)
+(csetq org-id-link-to-org-use-id 'use-existing)
+
 
 (provide 'setup-org)
 
