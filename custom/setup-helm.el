@@ -6,11 +6,16 @@
 ;; The default "C-x c" is quite close to "C-x C-c", which quits Emacs.
 ;; Changed to "C-c h". Note: We must set "C-c h" globally, because we
 ;; cannot change `helm-command-prefix-key' once `helm-config' is loaded.
-(global-set-key (kbd "C-c h") 'helm-command-prefix)
-(global-unset-key (kbd "C-x c"))
+;; (global-set-key (kbd "C-c h") 'helm-command-prefix)
+;;(global-unset-key (kbd "C-x c"))
 
+;; replace standard M-x with helm version - can be annoying
 (global-set-key (kbd "M-x") 'helm-M-x)
+
+
 (global-set-key (kbd "M-y") 'helm-show-kill-ring)
+
+;; Replace standard C-x C-f - can be annoying and slow in TRAMP
 ;;(global-set-key (kbd "C-x C-f") 'helm-find-files)
 
 (global-set-key (kbd "C-x b") 'helm-mini)
@@ -20,8 +25,10 @@
 
 ;;rebind tab to run persistent action
 (define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action)
+
 ;;make TAB work in terminal
 (define-key helm-map (kbd "C-i") 'helm-execute-persistent-action)
+
 ;;list actions using C-z
 (define-key helm-map (kbd "C-z")  'helm-select-action)
 
