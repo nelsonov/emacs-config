@@ -126,9 +126,15 @@
     (list (apply 'call-process program nil (current-buffer) nil args)
           (buffer-string))))
 
+; macro to allow setting custom variables
+(defmacro csetq (sym val)
+  `(funcall (or (get ',sym 'custom-set) 'set-default) ',sym ,val))
 ;;;; End Utility Functions;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;;;; Editing ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;org-mode
+(require 'setup-org)
+
 ;;Markdown mode setup
 (require 'setup-markdown)
 
@@ -183,27 +189,6 @@ asterix (lists) intact."
 
 ;;;; Completion ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (require 'setup-company)
-;;(require 'setup-helm)
+(require 'setup-helm)
 ;;;; End Completion ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;;;; Custom ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(ansi-color-names-vector
-   ["black" "#d55e00" "#009e73" "#f8ec59" "#0072b2" "#cc79a7" "#56b4e9" "white"])
- '(org-agenda-files (quote ("~/org/notes.org")))
- '(package-selected-packages
-   (quote
-    (markdown-preview-mode markdown-mode blacken black isort easy-hugo company-go go-eldoc company ace-window helm projectile pandoc-mode org-protocol-capture-html org-protocol highlight-symbol ggtags dockerfile-mode yaml-mode use-package)))
- '(safe-local-variable-values
-   (quote
-    ((circuitpython-copy-path . "/mnt/chromeos/removable/CIRCPY/")))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
