@@ -4,15 +4,15 @@
   :bind ("C-x M-g" . magit-dispatch-popup)
   :bind ("C-x g" . magit-status))
 
-(use-package gitconfig-mode
-  :ensure t
-  :mode ("/\\.gitconfig\\'" "/\\.git/config\\'" "/git/config\\'"
-         "/\\.gitmodules\\'"))
+;(use-package gitconfig-mode
+;  :ensure t
+;  :mode ("/\\.gitconfig\\'" "/\\.git/config\\'" "/git/config\\'"
+;         "/\\.gitmodules\\'"))
 
-(use-package gitignore-mode
-  :ensure t
-  :mode ("/\\.gitignore\\'" "/\\.gitignore_global" "/\\.git/info/exclude\\'"
-	 "/git/ignore\\'"))
+;(use-package gitignore-mode
+;  :ensure t
+;  :mode ("/\\.gitignore\\'" "/\\.gitignore_global" "/\\.git/info/exclude\\'"
+;	 "/git/ignore\\'"))
 
 (use-package gh
   :config
